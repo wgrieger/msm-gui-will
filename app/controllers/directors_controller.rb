@@ -36,16 +36,23 @@ class DirectorsController < ApplicationController
 
     render({ :template => "director_templates/eldest" })
   end
+
 #add form here
   def add
    @director_name=params.fetch("director_name")
    @director_dob=params.fetch("director_dob")
+   @director_bio=params.fetch("director_bio")
+   @director_image=params.fetch("director_image")
 
-   matching_directors = Director.all
-   @list_of_directors = matching_directors.order({ :created_at => :desc })
+   x= Director.new
+   x.name=@director_name
+   x.dob=@director_dob
+   x.bio=@director_bio
+   x.image=@director_image
+   x.save
 
+   redirect_to("/directors")
     
-render({ :template => "director_templates/index" })
   end  
 
 
