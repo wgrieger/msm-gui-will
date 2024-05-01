@@ -1,10 +1,41 @@
+<!--grabs director id for this page-->
+<%@return_to_director_id=params.fetch("path_id")%>
+<%@the_director_pre=Director.all.where(:id=> @return_to_director_id)%>
+<%@the_director=@the_director_pre[0]%>
+
 <h1>
-  Director #<%= @the_director.id %> details
+  director #<%=@return_to_director_id %>
 </h1>
 
 <a href="/directors">
   Go back
 </a>
+
+<div></div>
+<a href="/delete_director"> Delete director </a>
+
+<hr>
+<form action="/directors/<%=@return_to_director_id%>/director_update" method="post">
+  <div>
+    <label for="first_field"> Name</label>
+    <input id="first_field" type="text" name="director_name_up" value="<%=@the_director.name%>">
+  </div>
+  <div>
+    <label for="second_field">Dob</label>
+    <input id="second_field" type="date" name="director_dob_up" value="<%=@the_director.dob%>">
+  </div>
+  <div>
+    <label for="third_field">Bio</label>
+    <input id="third_field" type="text" name="director_bio_up" value="<%=@the_director.bio%>">
+  </div>
+  <div>
+    <label for="fourth_field">Image</label>
+    <input id="fourth_field" type="text" name="director_image_up" value="<%=@the_director.image%>">
+  </div>
+  <div>
+    <button>Update director</button>
+  </div>
+</form>
 
 <hr>
 

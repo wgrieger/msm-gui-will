@@ -55,5 +55,26 @@ class DirectorsController < ApplicationController
     
   end  
 
+#update form beggining 
+def update
+
+  @director_id_to_send=params.fetch("path_id")
+  @director_name_up=params.fetch("director_name_up")
+  @director_dob_up=params.fetch("director_dob_up")
+  @director_bio_up=params.fetch("director_bio_up")
+  @director_image_up=params.fetch("director_image_up")
+
+  x_pre=Director.all.where(:id=>@director_id_to_send)
+  x=x_pre[0]
+   x.name=@director_name_up
+   x.dob=@director_dob_up
+   x.bio=@director_bio_up
+   x.image=@director_image_up
+   x.save
+
+redirect_to("/directors/#{@director_id_to_send}")
+
+end 
+
 
 end
