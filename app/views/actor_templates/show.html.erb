@@ -2,6 +2,12 @@
   Actor #<%= @the_actor.id %> details
 </h1>
 
+<p> testing area</p>
+<%=@actor_name.class%>
+<div>
+<p>end test</p>
+</div>
+
 <a href="/actors">
   Go back
 </a>
@@ -12,17 +18,17 @@
 <form action="/update_actor" method="post">
   <div>
   <label for="first_field">Name</label>
-  <input id="first_field" type="text" name="actor_name">
+  <input id="first_field" type="text" name="actor_name_up">
 </div><div>
   <label for="second_field">Dob</label>
-  <input id="second_field" type="date" name="actor_dob">
+  <input id="second_field" type="date" name="actor_dob_up">
 </div><div>
   <label for="third_field">Bio</label>
-  <input id="third_field" type="text" name="actor_bio">
+  <input id="third_field" type="text" name="actor_bio_up">
 </div><div>
 </div><div>
   <label for="third_field">Image</label>
-  <input id="third_field" type="text" name="actor_image">
+  <input id="third_field" type="text" name="actor_image_up">
 </div><div>
 <button>Update actor</button>
 </div>

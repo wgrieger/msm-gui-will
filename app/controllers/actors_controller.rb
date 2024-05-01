@@ -33,18 +33,19 @@ class ActorsController < ApplicationController
      
    end  
 
+   #right now
    def update
-    @actor_name=params.fetch("actor_name")
-    @actor_dob=params.fetch("actor_dob")
-    @actor_bio=params.fetch("actor_bio")
-    @actor_image=params.fetch("actor_image")
+    @actor_name=params.fetch("actor_name_up")
+    @actor_dob=params.fetch("actor_dob_up")
+    @actor_bio=params.fetch("actor_bio_up")
+    @actor_image=params.fetch("actor_image_up")
 
-    x= Actor.all.where(:id => @actor_to_update)
-    x.name=@actor_name
-    x.dob=@actor_dob
-    x.bio=@actor_bio
-    x.image=@actor_image
-    x.save
+  
+    @the_actor.name= @actor_name
+    @the_actor.dob=@actor_dob
+    @the_actor.bio=@actor_bio
+    @the_actor.image=@actor_image
+    @the_actor.save
 
 
     redirect_to("/actors/:path_id")
