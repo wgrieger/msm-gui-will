@@ -8,14 +8,38 @@
   <label for="first_field">Name</label>
   <input id="first_field" type="text" name="director_name">
 </div><div>
-  <label for="second_field">Name</label>
-  <input id="second_field" type="text" name="director_dob">
+  <label for="second_field">Dob</label>
+  <input id="second_field" type="date" name="director_dob">
+</div><div>
+  <label for="third_field">Bio</label>
+  <input id="third_field" type="text" name="director_bio">
+</div><div>
+</div><div>
+  <label for="third_field">Image</label>
+  <input id="third_field" type="text" name="director_image">
+</div><div>
+<button>Create Director</button>
 </div>
-
-
-
 </form>
 <hr>
+
+<!--display area-->
+<div>
+</div>
+<p> 
+testing area
+<div>
+<%=@director_name%>
+<%=@director_dob%>
+</div>
+<div>
+testing area end 
+</div>
+</p>
+
+
+</div>
+
 <table border="1">
   <tr>
     <th>
