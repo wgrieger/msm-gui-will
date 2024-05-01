@@ -18,10 +18,14 @@ Rails.application.routes.draw do
 
   post("/add_actor", {:controller => "actors", :action=> "add"})
 
+  post("/add_movie", {:controller => "movies", :action=> "add"})
+
   post("/actors/:path_id/actor_update", 
   {:controller => "actors", :action=> "update"})
+  
   post("/movies/:path_id/movie_update", 
   {:controller => "movies", :action=> "update"})
+
   post("/directors/:path_id/director_update", 
   {:controller => "directors", :action=> "update"})
 

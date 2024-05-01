@@ -50,5 +50,24 @@ def delete
 
   end 
 
+def add
+  @movie_title=params.fetch("movie_title")
+  @movie_year=params.fetch("movie_year")
+  @movie_duration=params.fetch("movie_duration")
+  @movie_description=params.fetch("movie_description")
+  @movie_image=params.fetch("movie_image")
+  @movie_director_id=params.fetch("movie_director_id")
+
+  x=Movie.new
+  x.title=@movie_title
+  x.year=@movie_year
+  x.description=@movie_description
+  x.duration=@movie_duration
+  x.image=@movie_image
+  x.director_id=@movie_director_id
+  x.save
+
+  redirect_to("/movies")
+end
 
 end
