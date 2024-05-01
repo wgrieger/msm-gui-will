@@ -4,7 +4,7 @@
 <%@the_actor=@the_actor_pre[0]%>
 
 <h1>
-  Actor #<%= @return_to_actor_id %>
+  Actor #<%=@return_to_actor_id %>
 </h1>
 
 <!--entering test area-->
@@ -24,24 +24,25 @@
 <div></div>
 <a href="/delete_actor"> Delete actor </a>
 
-<!-- form -->
+<!-- form  -->
+<!-- working with auto fill-->
 <hr>
 <form action="/actors/<%=@return_to_actor_id%>/actor_update" method="post">
   <div>
     <label for="first_field">Name</label>
-    <input id="first_field" type="text" name="actor_name_up">
+    <input id="first_field" type="text" name="actor_name_up" value="<%=@the_actor.name%>">
   </div>
   <div>
     <label for="second_field">Dob</label>
-    <input id="second_field" type="date" name="actor_dob_up">
+    <input id="second_field" type="date" name="actor_dob_up" value="<%=@the_actor.dob%>">
   </div>
   <div>
     <label for="third_field">Bio</label>
-    <input id="third_field" type="text" name="actor_bio_up">
+    <input id="third_field" type="text" name="actor_bio_up" value="<%=@the_actor.bio%>">
   </div>
   <div>
     <label for="fourth_field">Image</label>
-    <input id="fourth_field" type="text" name="actor_image_up">
+    <input id="fourth_field" type="text" name="actor_image_up" value="<%=@the_actor.image%>">
   </div>
   <div>
     <button>Update actor</button>
