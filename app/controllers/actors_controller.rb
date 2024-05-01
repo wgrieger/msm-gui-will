@@ -41,19 +41,19 @@ def add
 #update form beggining 
 def update
 
-        #@actor_id_to_display=params.fetch("path_id")
-        #@actor_name_up=params.fetch("actor_name_up")
-        #@actor_dob_up=params.fetch("actor_dob_up")
-        #@actor_bio_up=params.fetch("actor_bio_up")
-        #@actor_image_up=params.fetch("actor_image_up")
+        @actor_id_to_send=params.fetch("path_id")
+        @actor_name_up=params.fetch("actor_name_up")
+        @actor_dob_up=params.fetch("actor_dob_up")
+        @actor_bio_up=params.fetch("actor_bio_up")
+        @actor_image_up=params.fetch("actor_image_up")
 
-  
-        # x.name= @actor_name
-          #x.dob=@actor_dob
-          #x.bio=@actor_bio
-          #x.image=@actor_image
-          #x.save
-
+        x_pre=Actor.all.where(:id=>@actor_id_to_send)
+        x=x_pre[0]
+         x.name=@actor_name_up
+         x.dob=@actor_dob_up
+         x.bio=@actor_bio_up
+         x.image=@actor_image_up
+         x.save
 
     redirect_to("/actors/:path_id")
 
