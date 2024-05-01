@@ -55,7 +55,7 @@ def update
          x.image=@actor_image_up
          x.save
 
-    redirect_to("/actors/:path_id")
+    redirect_to("/actors/#{@actor_id_to_send}")
 
   end 
 
