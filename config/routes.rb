@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
   post("/actors/:path_id/actor_update", 
   {:controller => "actors", :action=> "update"})
+  post("/movies/:path_id/movie_update", 
+  {:controller => "movies", :action=> "update"})
 
   get("/actors/#{@actor_id_to_send}",{ :controller => "actors", :action => "show" })
   

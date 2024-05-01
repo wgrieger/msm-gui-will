@@ -19,16 +19,18 @@ class MoviesController < ApplicationController
 def update
 
   @movie_id_to_send=params.fetch("path_id")
-  @movie_name_up=params.fetch("movie_name_up")
-  @movie_dob_up=params.fetch("movie_dob_up")
-  @movie_bio_up=params.fetch("movie_bio_up")
+  @movie_title_up=params.fetch("movie_name_up")
+  @movie_year_up=params.fetch("movie_year_up")
+  @movie_description_up=params.fetch("movie_description_up")
+  @movie_duration_up=params.fetch("movie_duration_up")
   @movie_image_up=params.fetch("movie_image_up")
 
-  x_pre=movie.all.where(:id=>@movie_id_to_send)
+  x_pre=Movie.all.where(:id=>@movie_id_to_send)
   x=x_pre[0]
-   x.name=@movie_name_up
-   x.dob=@movie_dob_up
-   x.bio=@movie_bio_up
+   x.title=@movie_title_up
+   x.year=@movie_year_up
+   x.description=@movie_description_up
+   x.duration=@movie_duration_up
    x.image=@movie_image_up
    x.save
 
