@@ -17,6 +17,6 @@ Rails.application.routes.draw do
 
   post("/add_actor", {:controller => "actors", :action=> "add"})
 
-  post("/update_actor", {:controller => "actors", :action=> "update"})
+  post("/update_actor/:path_id", {:controller => "actors", :action=> "update"})
   #get("/delete_actor", {:controller => "actors", :action=> "delete"})
 end

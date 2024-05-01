@@ -1,9 +1,9 @@
 <h1>
-  Actor #<%= @the_actor.id %> details
+  Actor #<%= @the_actor.id%> details
 </h1>
 
 <p> testing area</p>
-<%=@actor_name.class%>
+<%=@actor_name_up%>
 <div>
 <p>end test</p>
 </div>
@@ -15,7 +15,8 @@
 <a href="/delete_actor"> Delete actor </a>
 
 <hr>
-<form action="/update_actor" method="post">
+<%@actor_return=params.fetch("path_id")%>
+<form action="/update_actor/" method="post">
   <div>
   <label for="first_field">Name</label>
   <input id="first_field" type="text" name="actor_name_up">
