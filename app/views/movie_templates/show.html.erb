@@ -1,3 +1,8 @@
+<!--grabs movie id for this page-->
+<%@return_to_movie_id=params.fetch("path_id")%>
+<%@the_movie_pre=Movie.all.where(:id=> @return_to_movie_id)%>
+<%@the_movie=@the_movie_pre[0]%>
+
 <h1>
   Movie #<%= @the_movie.id %> details
 </h1>
@@ -5,6 +10,44 @@
 <a href="/movies">
   Go back
 </a>
+<div></div>
+<a href="/delete_movie"> Delete movie </a>
+
+
+<!-- form  -->
+<!-- working with auto fill-->
+<hr>
+<form action="/movies/<%=@return_to_movie_id%>/movie_update" method="post">
+  <div>
+    <label for="first_field"> Title</label>
+    <input id="first_field" type="text" name="movie_name_up" value="<%=@the_movie.title%>">
+  </div>
+  <div>
+    <label for="second_field">Year</label>
+    <input id="second_field" type="year" name="movie_year_up" value="<%=@the_movie.year%>">
+  </div>
+  <div>
+    <label for="third_field">Duration</label>
+    <input id="third_field" type="duration" name="movie_duration_up" value="<%=@the_movie.duration%>">
+  </div>
+
+<div></div
+    <label for="fifth_field">Description</label>
+    <textarea id="fifth_field" type="text" name="movie_description_up" > <%=@the_movie.description%> </textarea>
+
+  <div>
+    <label for="fourth_field">Image</label>
+    <input id="fourth_field" type="text" name="movie_image_up" value="<%=@the_movie.image%>">
+  </div>
+
+<div></div>
+<label for="sixth_field">Director ID</label>
+    <input id="sixth_field" type="text" name="movie_director_up" value="<%=@the_movie.director_id%>">
+
+  <div>
+    <button>Update movie</button>
+  </div>
+</form>
 
 <hr>
 

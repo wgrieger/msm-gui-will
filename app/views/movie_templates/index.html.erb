@@ -3,6 +3,29 @@
 </h1>
 
 <hr>
+<form action="/add_movie" method="post">
+  <div>
+  <label for="first_field">Title</label>
+  <input id="first_field" type="text" name="movie_title">
+</div><div>
+  <label for="second_field">Year</label>
+  <input id="second_field" type="year" name="movie_year">
+</div><div>
+  <label for="third_field">Duration</label>
+  <input id="third_field" type="duration" name="movie_duration">
+</div><div>
+</div><div>
+  <label for="fourth_field">Description</label>
+  <textarea id="fourth_field" type="text" name="movie_description" rows="3"></textarea>
+</div>
+<div></div>
+  <label for="fifth_field">Director ID</label>
+  <input id="fifth_field" type="text" name="movie_director_id">
+<div>
+<button>Create movie</button>
+</div>
+</form>
+<hr>
 
 <table border="1">
   <tr>
