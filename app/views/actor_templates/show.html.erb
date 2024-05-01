@@ -1,12 +1,22 @@
+<!--grabs actor id for this page-->
+<%@return_to_actor_id=params.fetch("path_id")%>
+<%@the_actor_pre=Actor.all.where(:id=> @return_to_actor_id)%>
+<%@the_actor=@the_actor_pre[0]%>
+
 <h1>
-  Actor #<%= @the_actor.id%> details
+  Actor #<%= @return_to_actor_id %>
 </h1>
 
+<!--entering test area-->
 <p> testing area</p>
-<%=@actor_name_up%>
+<p>display the actor</p>
+<%= @the_actor %><div>
+</div>
+<%=@return_to_actor_id %>
 <div>
 <p>end test</p>
 </div>
+<!--leaving test area-->
 
 <a href="/actors">
   Go back
@@ -14,34 +24,40 @@
 <div></div>
 <a href="/delete_actor"> Delete actor </a>
 
+<!-- form -->
 <hr>
-<%@actor_return=params.fetch("path_id")%>
-<form action="/update_actor/" method="post">
+<form action="/actors/<%=@return_to_actor_id%>/actor_update" method="post">
   <div>
-  <label for="first_field">Name</label>
-  <input id="first_field" type="text" name="actor_name_up">
-</div><div>
-  <label for="second_field">Dob</label>
-  <input id="second_field" type="date" name="actor_dob_up">
-</div><div>
-  <label for="third_field">Bio</label>
-  <input id="third_field" type="text" name="actor_bio_up">
-</div><div>
-</div><div>
-  <label for="third_field">Image</label>
-  <input id="third_field" type="text" name="actor_image_up">
-</div><div>
-<button>Update actor</button>
-</div>
+    <label for="first_field">Name</label>
+    <input id="first_field" type="text" name="actor_name_up">
+  </div>
+  <div>
+    <label for="second_field">Dob</label>
+    <input id="second_field" type="date" name="actor_dob_up">
+  </div>
+  <div>
+    <label for="third_field">Bio</label>
+    <input id="third_field" type="text" name="actor_bio_up">
+  </div>
+  <div>
+  </div>
+  <div>
+    <label for="fourth_field">Image</label>
+    <input id="fourth_field" type="text" name="actor_image_up">
+  </div>
+  <div>
+    <button>Update actor</button>
+  </div>
 </form>
 <hr>
 
+<!--display-->
 <dl>
   <dt>
     Name
   </dt>
   <dd>
-    <%= @the_actor.name %>
+    <%=@the_actor.name %>
   </dd>
 
   <dt>
@@ -133,7 +149,7 @@
         
         <% the_director = matching_directors.at(0) %>
 
-        <%= the_director.name %>
+        <%=the_director.name %>
       </td>
 
       <td>
